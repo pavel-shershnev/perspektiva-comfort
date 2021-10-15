@@ -1,0 +1,12 @@
+<template>
+  <div>
+    <v-container>
+    <pre>
+    <p>
+Должники
+таблица
+    </p>
+    </pre>
+    </v-container>
+  </div>
+</template>

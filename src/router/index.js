@@ -1,28 +1,75 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/Welcome.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'Welcome',
     component: Home
   },
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    component: () => import('../views/About.vue')
+  },
+  {
+    path: '/house/:houseKey',
+    name: 'house',
+    component: () => import('../views/house.vue'),
+    children: [
+      { 
+        path: 'info',
+        component: () => import('../views/info.vue'),
+      },
+      { 
+        path: 'disclosure',
+        component: () => import('../views/disclosure.vue'),
+      },
+      { 
+        path: 'informing',
+        component: () => import('../views/informing.vue'),
+      },
+      { 
+        path: 'debtors',
+        component: () => import('../views/debtors.vue'),
+      },
+      { 
+        path: 'answers',
+        component: () => import('../views/answers.vue'),
+      },
+      { 
+        path: 'contacts',
+        component: () => import('../views/contacts.vue'),
+      },
+      { 
+        path: 'documents',
+        component: () => import('../views/documents.vue'),
+      },
+    ]
+  },
+  
+  // ,
+  // {
+  //   path: '/infoDoc',
+  //   name: 'InfoDoc',
+  //   component: () => import('../views/Info.vue'),
+  // },
+  // {
+  //   path: 'documents/:routeParams}',
+  //   name: 'InfoDoc',
+  //   component: () => import('../views/Info.vue'),
+  // },
+
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
+  linkActiveClass: 'active',
+  linkExactActiveClass: 'active',
   routes
 })
 

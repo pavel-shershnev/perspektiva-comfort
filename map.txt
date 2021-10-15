@@ -1,0 +1,5 @@
+/ -> welcome
+/house/:routeParam
+/house/infoDoc/:routeParam
+/house/informing/:routeParam 
+...
