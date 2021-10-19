@@ -1,13 +1,15 @@
 <template>
 <div>
  
- <v-container>
-   <div class="text-center white--text cyan" >
+<v-container>
+   <div class="text-center " >
      <h1>ООО «ПЕРСПЕКТИВА КОМФОРТ»</h1>
+     <br>
      <v-img 
      class="mx-10"
      height="250"
-     src="https://activezone-pro.ru/images/stories/Client_logos/Investtorg.png"
+    
+     src="https://img4.dp.ru/images/article/2019/03/22/85185BFB-EA1C-4B59-8CF5-E5152ACA04BA.png"
      ></v-img>
 <br>
      <p class="text-center white"><router-link to="/about">О компании</router-link></p>
@@ -18,11 +20,14 @@
     <h4>Здесь вы найдёте всю необходимую информацию, подлежащую раскрытию,согласно Стандарта раскрытия информации (Постановления Правительства №731 от 23 сентября 2010 г.)</h4>
    </div>
    <br>
+   <h3 class="text-center">Дома в управлении:</h3>
+   <br>
 
       <v-row class="mx-2">
     <v-col  v-for="home in homes" :key="home.id" md="6">
       <v-card
         elevation="12"
+        height="100%"
       >
         <v-img
         
@@ -34,27 +39,30 @@
           {{home.address}}
         </v-card-title>
         <v-card-text>
-          <p>{{home.date}}</p>
+          <p>В управлении с {{home.date}}</p>
         </v-card-text>
     
 
     <v-card-actions>
+      <router-link :to="`/house/${home.houseKey}/info`">
       <v-btn
         class="mx-3"
         depressed
-      outlined 
+        outlined 
         rounded
         color="primary"
-        @click="$router.push(`/house/${home.houseKey}/info`)"
       >
        Выбрать
       </v-btn>
+      </router-link>
     </v-card-actions>
     
       </v-card>
     </v-col>
   </v-row>
   </v-container>
+ 
+ 
 
  
  

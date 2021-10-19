@@ -11,7 +11,7 @@
   
       <v-spacer></v-spacer>
   
-      <h3>{{address}}</h3>
+      <!-- <h3 class="nav-title" v-show="!$vuetify.breakpoint.xs">{{address}}</h3> -->
 
     </v-app-bar>
   </div>
@@ -20,7 +20,10 @@
 export default {
   emits: ['clickIcon'],
   name: 'Navbar',
-  props:['address'],
+  // props:['address'],
 }
 </script>
+<style scoped>
+
+</style>
 

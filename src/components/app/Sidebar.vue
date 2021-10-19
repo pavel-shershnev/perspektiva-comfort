@@ -8,8 +8,9 @@
     ref="nd"
     disable-route-watcher
     
+    
     >
-     <!-- class="v-navigation-drawer--is-mobile" -->
+    
       <v-list
         nav
         dence   
